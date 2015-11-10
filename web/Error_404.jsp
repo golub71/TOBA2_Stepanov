@@ -1,10 +1,7 @@
-<%-- 
-    Document   : Error_404
-    Created on : Oct 13, 2015, 8:48:23 PM
-    Author     : robertstepanov
---%>
 
+<%@ taglib prefix="c" url="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>

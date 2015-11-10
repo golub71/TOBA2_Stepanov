@@ -5,6 +5,7 @@
  */
 package TOBA.Controllers;
 
+import UserBean.UserJavabean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,18 +14,51 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  *
  * @author robertstepanov
  */
+
+
 public class NewCustomerServlet extends HttpServlet {
 
-    
+ 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
+        String url = "Success.html";
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "joint";
+            
+        if (action.equals("join")) {
+            url = "/Success.html";
+        }
+        else if (action.equals("add")) {
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String phoneNumber = request.getParameter("phoneNumber");
+            String address = request.getParameter("address");
+            String city = request.getParameter("city");
+            String state = request.getParameter("state");
+            String email = request.getParameter("email");
+            String userName = request.getParameter("userName");
+            String password = request.getParameter("password");
+            
+            
+            User user = new User(firstName, lastName, phoneNumber, address, city, state, email, userName, password);
+                   
+        }
+        }
+        {
+            UserJavabean UserJavabean;
+            UserJavabean = new UserJavabeanean();
+                    
+                   // UserJavabean.setName(userName.zip);
+                    UserJavabean.setPassword("Welcome1");
+                
+                }
            
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
@@ -34,7 +68,6 @@ public class NewCustomerServlet extends HttpServlet {
             String state = request.getParameter("state");
             String zip = request.getParameter("zip");
             String email = request.getParameter("email");
-            String url = "/New_customer.html";
             String message;
             if (firstName == null || lastName==null || phoneNumber==null || address==null
                     || city==null || state==null || zip==null || email==null || firstName.isEmpty()
@@ -90,6 +123,12 @@ public class NewCustomerServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private static class UserJavabeanean extends UserJavabean {
+
+        public UserJavabeanean() {
+        }
+    }
 
     }
 

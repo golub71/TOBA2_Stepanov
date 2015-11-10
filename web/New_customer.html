@@ -24,21 +24,21 @@
     <center>
             <form action="newcustomer" method="POST">
                 
-                First Name:<input type="text" name="firstName" required><br>
+                First Name:<input type="text" name="firstName" value="$(user.firstName)"><br>
                 
-                Last Name:<input type="text" name="lastName" required><br>
+                Last Name:<input type="text" name="lastName" value="$(user.lastName)"><br>
                 
-                Phone:<input type="number" name="phoneNumber"><br>
+                Phone:<input type="text" name="phoneNumber" value="&(user.phoneNumber)"><br>
                 
-                Address:<input type="text" name="address" required><br>
+                Address:<input type="text" name="address" value="&(user.address)"><br>
                 
-                City:<input type="text" name="city" required><br>
+                City:<input type="text" name="city" value="&(user.city)"><br>
                 
-                State:<input type="text" name="state" required><br>
+                State:<input type="text" name="state" value="&(user.state)"><br>
                 
-                Zip:<input type="number" name="zip" required><br>
+                Zip:<input type="text" name="zip" value="&(user.zip)"><br>
                 
-                Email:<input type="email" name="email" required><br>
+                Email:<input type="email" name="email" value="&(user.email)"><br>
                 
                 <input type="submit" value="submit"><br>
             </form>
